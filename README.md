@@ -1,0 +1,1 @@
+# design-pattern-individual-assignment
