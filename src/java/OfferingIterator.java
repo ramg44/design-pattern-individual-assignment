@@ -1,23 +1,12 @@
-package java;
+public class OfferingIterator extends OfferingList implements ListIterator{
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
 
-public class OfferingIterator {
-
-	private OfferingList offeringList;
-
-	public boolean hasNext() {
-		return false;
-	}
-
-	public Offering Next() {
-		return null;
-	}
-
-	public void MoveToHead() {
-
-	}
-
-	public void Remove() {
-
-	}
+    @Override
+    public Object next() {
+        return null;
+    }
 
 }
