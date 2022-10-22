@@ -1,31 +1,45 @@
-package java;
+public abstract class Person {
 
-public abstract class Person implements ProductMenu {
+    ProductMenu meatProductMenu;
+    ProductMenu produceProductMenu;
 
-	private ProductMenu theProductMenu;
+    ProductMenu productMenu;
+     private String name;
 
-	public void showMenu() {
+    public Person(ProductMenu meatProductMenu,ProductMenu produceProductMenu) throws Exception {
+      this.meatProductMenu = meatProductMenu;
+      this.produceProductMenu =produceProductMenu;
+    }
 
-	}
+    public Person() {
+    }
 
-	public void showAddButton() {
+    public String getName() {
+        return name;
+    }
 
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void showViewButton() {
+    public abstract void showMenu();
 
-	}
+    public void showAddButton() {
 
-	public void showRadioButton() {
+    }
 
-	}
+    public void showViewButton() {
 
-	public void showLabels() {
+    }
 
-	}
+    public void showRadioButton() {
 
-	public ProductMenu CreateProductMenu() {
-		return null;
-	}
+    }
+
+    public void showLabels() {
+
+    }
+
+    public abstract ProductMenu CreateProductMenu(int productType) throws Exception;
 
 }
