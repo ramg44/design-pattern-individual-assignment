@@ -1,23 +1,12 @@
-package java;
+public class ProductIterator implements ListIterator{
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
 
-public class ProductIterator {
-
-	private ClassProductList classProductList;
-
-	public boolean hasNext() {
-		return false;
-	}
-
-	public Product Next() {
-		return null;
-	}
-
-	public void MoveToHead() {
-
-	}
-
-	public void Remove() {
-
-	}
+    @Override
+    public Object next() {
+        return null;
+    }
 
 }
