@@ -1,15 +1,28 @@
-package java;
-
 public class Buyer extends Person {
 
-	private Person person;
+    public Buyer() throws Exception {
 
-	public void showMenu() {
+    }
 
-	}
+    @Override
+    public void showMenu() {
 
-	public ProductMenu CreateProductMenu() {
-		return null;
-	}
+    }
 
+    @Override
+    public ProductMenu CreateProductMenu(int productType) throws Exception {
+        switch (productType) {
+
+            case 0:
+                productMenu = new MeatProductMenu();
+                break;
+            case 1:
+                productMenu = new ProduceProductMenu();
+                break;
+            default:
+                productMenu = null;
+
+        }
+        return productMenu;
+    }
 }
