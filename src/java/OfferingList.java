@@ -1,7 +1,4 @@
-package java;
+import java.util.ArrayList;
 
-public class OfferingList {
-
-	private OfferingIterator offeringIterator;
-
+public class OfferingList extends ArrayList {
 }
