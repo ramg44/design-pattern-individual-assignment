@@ -34,11 +34,11 @@ public class Main {
 
                     facade.showMenu();
                     while (true) {
-                        System.out.println("Enter 0 to see available Meat Product menu, 1 to Produce Product menu and 2 to add the product to your list ");
-                        int productMenu = scnInt.nextInt();
-                        if (productMenu == 0) {
+                        System.out.println("Enter Meatproduct to see available Meat Product menu, ProductMenu to Produce Product menu and addProduct to add the product to your list ");
+                        String userType = scnStr.nextLine();
+                        if (productMenu == "Meatproduct") {
                             facade.meatProductMenu.ShowMenu();
-                        } else if (productMenu == 1) {
+                        } else if (productMenu == "ProductMenu") {
                             System.out.println("Meat Product Menu");
                             String leftAlignFormat = "| %-15s | %-15s |%n";
                             System.out.format("+-----------------+------+%n");
@@ -50,43 +50,43 @@ public class Main {
                                 System.out.format(leftAlignFormat, product.getProductCategory(), product.getProductName());
                             }
                             System.out.format("+-----------------+------+%n");
-                        } else if (productMenu == 2) {
+                        } else if (productMenu == "addProduct") {
                             break;
 
                         } else {
-                            System.out.println("Invalid entry !!!!!!!!!!!!");
+                            System.out.println("Invalid entry ");
                         }
                     }
                     facade.showUserProductList(name);
                     while (true) {
-                        System.out.println("Enter 0 to add the product,1 to delete the product and 2 to exit");
-                        int input = scnInt.nextInt();
-                        if (input == 0) {
+                        System.out.println("Enter addproduct to add the product,deleteproduct to delete the product and logout to exit");
+                        String userType = scnStr.nextLine();
+                        if (input == "addproduct") {
                             System.out.println("Enter the product name that you want to add to your list");
                             String productname = scnStr.nextLine();
                             if (facade.theProductList.contains(new Product(productname))) {
                                 facade.addUserProductToList(name, new Product(productname));
                                 facade.showUserProductList(name);
                             } else {
-                                System.out.println("Error!!! Please enter the product which showed in below list!!!!!!!!");
+                                System.out.println("Error!!! Please enter the product which showed in below list");
                                 facade.showMenu();
                             }
 
 
-                        } else if (input == 1) {
+                        } else if (input == "deleteproduct") {
                             System.out.println("Enter the product name that you want to delete");
                             String productname = scnStr.nextLine();
                             if (facade.getUserProductList(name).contains(new Product(productname))) {
                                 facade.deleteUserProductToList(name, productname);
                                 facade.showUserProductList(name);
                             } else {
-                                System.out.println("Error!!! Please enter the product which showed in below list!!!!!!!!");
+                                System.out.println("Error!!! Please enter the product which showed in below list");
                                 facade.showUserProductList(name);
                             }
-                        } else if (input == 2) {
+                        } else if (input == "logout") {
                             break;
                         } else {
-                            System.out.println("Invalid entry !!!!!!!!!!!!");
+                            System.out.println("Invalid entry ");
                         }
 
                     }
@@ -102,13 +102,13 @@ public class Main {
                     System.out.println("Successfully logged in");
                     facade.showUserProductList(name);
                     while (true) {
-                        System.out.println("Enter 0 to display Meat Product menu, 1 to Produce Product menu and 2 to create the product to sell ");
-                        int productMenu = scnInt.nextInt();
-                        if (productMenu == 0) {
+                        System.out.println("Enter Meatproduct to see available Meat Product menu, ProductMenu to Produce Product menu and addProduct to add the product to your list ");
+                        String userType = scnStr.nextLine();
+                        if (productMenu == "Meatproduct") {
                             facade.selectProductMenu("Meat").ShowMenu();
-                        } else if (productMenu == 1) {
+                        } else if (productMenu == "ProductMenu") {
                             facade.selectProductMenu("Produce").ShowMenu();
-                        } else if (productMenu == 2) {
+                        } else if (productMenu == "addProduct") {
                             break;
 
                         } else {
@@ -117,9 +117,9 @@ public class Main {
                     }
 
                     while (true) {
-                        System.out.println("Enter 0 to add the product, 1 to delete the product and 2 for exit ");
-                        int input = scnInt.nextInt();
-                        if (input == 0) {
+                        System.out.println("Enter addproduct to add the product,deleteproduct to delete the product and logout to exit ");
+                        String userType = scnStr.nextLine();
+                        if (input == "addproduct") {
                             System.out.println("Enter the product category that you want to add to your list");
                             String productCategory = scnStr.nextLine();
                             System.out.println("Enter the product name that you want to add to your list");
@@ -131,7 +131,7 @@ public class Main {
                                 System.out.println("!!!!!The product already exist in store");
                             }
                             facade.showUserProductList(name);
-                        } else if (input == 1) {
+                        } else if (input == "deleteproduct") {
                             System.out.println("Enter the product name that you want to delete");
                             String productname = scnStr.nextLine();
                             if (facade.getUserProductList(name).contains(new Product(productname))) {
@@ -142,7 +142,7 @@ public class Main {
                                 System.out.println("Error!!! Please enter the product which showed in below list!!!!!!!!");
                                 facade.showUserProductList(name);
                             }
-                        } else if (input == 2) {
+                        } else if (input == "logout") {
                             break;
                         } else {
                             System.out.println("Invalid entry !!!!!!!!!!!!");
