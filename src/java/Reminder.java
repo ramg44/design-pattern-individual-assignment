@@ -1,5 +1,5 @@
-package java;
-
-public class Reminder {
+class Reminder {
+    NodeVisitor nodeVisitor;
+    ClassProductList classProductList;
 
 }
